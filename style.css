@@ -1,0 +1,82 @@
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0000;
+}
+
+.card {
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  /* ширина и высота 2 блока */
+
+  /* Значения определяются в зависимости от его размера */
+  /* margin-left = - width / 2 */
+
+  /* margin-top = - height / 2 */
+  margin-top: -125px;
+  perspective: 2500px;
+  font-family: "Homemade Apple", cursive;
+}
+.card .page {
+  width: 100%;
+
+
+
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  will-change: transform;
+  position: relative;
+  position: absolute;
+  transform-origin: left;
+}
+.card .page:nth-of-type(1) {
+  z-index: -1;
+}
+.card .page:nth-of-type(2) {
+  z-index: -2;
+}
+.card .page.flipped {
+  transform: rotateY(-180deg);
+}
+.card .page.flipped:nth-of-type(1) {
+  z-index: 1;
+}
+.card .page.flipped:nth-of-type(2) {
+  z-index: 2;
+}
+.card .page .face {
+  background-color: #fff;
+
+  text-align: center;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+flex-direction: column
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-items: flex-end
+}
+.card .page .face * {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+
+}
+.card .page .face--back {
+  transform: rotateY(180deg);
+
+}
+
+ img {
+  width: 25vh;
+    border: 1px solid #6d6d6d;
+}
+
+ 
